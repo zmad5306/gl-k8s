@@ -3,14 +3,13 @@ kind: Ingress
 metadata:
   name: gl-ingress
 spec:
+  backend:
+    serviceName: gl-ui-service
+    servicePort: 80
   rules:
   - host: grocery-list
     http:
       paths:
-      - path: /
-        backend:
-          serviceName: gl-ui-service
-          servicePort: 80
       - path: /api
         backend:
           serviceName: gl-api-service
