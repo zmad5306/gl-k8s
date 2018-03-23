@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gl-ui-service
+  labels:
+    app: gl-ui
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: gl-ui

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gl-dept-deployment
+  labels:
+    app: gl-dept
+spec:
+  replicas: 1
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: gl-dept
+  template:
+    metadata:
+      labels:
+        app: gl-dept
+    spec:
+      containers:
+      - name: gl-dept
+        image: zmad5306/gl-dept:latest
+        ports:
+        - containerPort: 8080

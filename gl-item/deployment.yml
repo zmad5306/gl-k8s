@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gl-item-deployment
+  labels:
+    app: gl-item
+spec:
+  replicas: 1
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: gl-item
+  template:
+    metadata:
+      labels:
+        app: gl-item
+    spec:
+      containers:
+      - name: gl-item
+        image: zmad5306/gl-item:latest
+        ports:
+        - containerPort: 8080
