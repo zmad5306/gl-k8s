@@ -2,19 +2,17 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: gl-ingress
-  annotations:
-    ingress.kubernetes.io/rewrite-target: /
 spec:
-  backend:
-    serviceName: gl-ui-service
-    servicePort: 80
   rules:
-  - host: api.minikube
+  - host: grocery-list
     http:
       paths:
+      - path: /
+        backend:
+          serviceName: gl-ui-service
+          servicePort: 80
       - path: /api
         backend:
           serviceName: gl-api-service
           servicePort: 8080
-
-          
+      

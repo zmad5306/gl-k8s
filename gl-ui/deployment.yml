@@ -5,7 +5,7 @@ metadata:
   labels:
     app: gl-ui
 spec:
-  replicas: 3
+  replicas: 1
   minReadySeconds: 5
   strategy:
     type: RollingUpdate
