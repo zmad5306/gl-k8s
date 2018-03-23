@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
       - name: gl-ui
-        image: gl-ui:latest
+        image: zmad5306/gl-ui:latest
         ports:
         - containerPort: 80
