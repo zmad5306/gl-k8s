@@ -25,3 +25,23 @@ spec:
         image: zmad5306/gl-api:latest
         ports:
         - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /api/actuator/health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /api/actuator/health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
