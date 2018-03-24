@@ -25,16 +25,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        readinessProbe:
-          httpGet:
-            scheme: HTTP
-            path: /dept/actuator/health
-            port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 30
-          timeoutSeconds: 30
-          successThreshold: 1
-          failureThreshold: 3
         livenessProbe:
           httpGet:
             scheme: HTTP
