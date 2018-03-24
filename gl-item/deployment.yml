@@ -6,7 +6,6 @@ metadata:
     app: gl-item
 spec:
   replicas: 1
-  minReadySeconds: 5
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -25,3 +24,23 @@ spec:
         image: zmad5306/gl-item:latest
         ports:
         - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /item/actuator/health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 20
+          timeoutSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /item/actuator/health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 20
+          timeoutSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
