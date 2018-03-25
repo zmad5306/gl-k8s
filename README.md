@@ -1,28 +1,66 @@
-# gl-k8s
-Kubernetes manifests for grocery list application
+# Grocery List with Docker and Kubernetes
 
-## gl-db mongodb database
+Kubernetes manifests for grocery list application.
 
-### Deploy
+## Development Environment
+
+### Install minikube & kubectl
+
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+
+### Mongodb Database
 
 `kubectl apply -f gl-db/mongo-statefulset.yaml`
 
-### Clean up
+### Department Micro-service
+
+`kubectl apply -f gl-dept/deployment.yaml`
+
+`kubectl apply -f gl-dept/service.yaml`
+
+### List Micro-service
+
+`kubectl apply -f gl-list/deployment.yaml`
+
+`kubectl apply -f gl-list/service.yaml`
+
+### Item Micro-service
+
+`kubectl apply -f gl-item/deployment.yaml`
+
+`kubectl apply -f gl-item/service.yaml`
+
+### API Gateway
+
+`kubectl apply -f gl-api/deployment.yaml`
+
+`kubectl apply -f gl-api/service.yaml`
+
+### Web Application (UI)
+
+`kubectl apply -f gl-ui/deployment.yaml`
+
+`kubectl apply -f gl-ui/service.yaml`
+
+### Ingress
+
+`kubectl apply -f gl-ingress/ingress.yaml`
+
+#### DNS
+
+Get minikube ip by executing `minikube ip` in a command prompt running as admin. Edit host file `C:\Windows\System32\drivers\etc\hosts` add entry `<minikube ip> grocery-list`. This maps minikube's host ip to `grocery-list`. The ingress service is exposed on the `grocery-list` DNS entry.
+
+The application then may be access be executing `http://grocery-list/` in the browser.
+
+## Other Useful Commands
+### Ingress Status
+
+`kubectl describe ingress --namespace default`
+
+### Mongodb Database Clean Up
 
 `kubectl delete statefulset mongo`
 
 `kubectl delete svc mongo`
 
 `kubectl delete pvc -l role=mongo`
-
-## Ingress
-
-### Setup DNS
-
-Get minikube ip by executing `minikube ip` in a command prompt running as admin. Edit host file `C:\Windows\System32\drivers\etc\hosts` add entry `<minikube ip> grocery-list`. This maps minikube's host ip to `grocery-list`. The ingress service is exposed on the `grocery-list` DNS entry.
-
-The application then may be access be executing `http://grocery-list/` in the browser.
-
-#### Ingress Status
-
-`kubectl describe ingress --namespace default`
