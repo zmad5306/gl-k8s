@@ -64,3 +64,25 @@ The application then may be access be executing `http://grocery-list/` in the br
 `kubectl delete svc mongo`
 
 `kubectl delete pvc -l role=mongo`
+
+## Docker Image Repositories
+
+### Department Micro-service
+
+zmad5306/gl-dept: https://hub.docker.com/r/zmad5306/gl-dept/
+
+### List Micro-service
+
+zmad5306/gl-list: https://hub.docker.com/r/zmad5306/gl-list/
+
+### Item Micro-service
+
+zmad5306/gl-item: https://hub.docker.com/r/zmad5306/gl-item/
+
+### API Gateway
+
+zmad5306/gl-api: https://hub.docker.com/r/zmad5306/gl-api/
+
+### Web Application (UI)
+
+zmad5306/gl-ui: https://hub.docker.com/r/zmad5306/gl-ui/
