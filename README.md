@@ -48,11 +48,12 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 #### DNS
 
-Get minikube ip by executing `minikube ip` in a command prompt running as admin. Edit host file `C:\Windows\System32\drivers\etc\hosts` add entry `<minikube ip> grocery-list`. This maps minikube's host ip to `grocery-list`. The ingress service is exposed on the `grocery-list` DNS entry.
+Get minikube's ip by executing `minikube ip` in a command prompt running as admin. Edit host file `C:\Windows\System32\drivers\etc\hosts` add entry `<minikube ip> grocery-list`. This maps minikube's host ip to `grocery-list`. The ingress service is exposed on the `grocery-list` DNS entry.
 
 The application then may be access be executing `http://grocery-list/` in the browser.
 
 ## Other Useful Commands
+
 ### Ingress Status
 
 `kubectl describe ingress --namespace default`
@@ -67,10 +68,10 @@ The application then may be access be executing `http://grocery-list/` in the br
 
 ## Source and Image Repositories
 
-| Repo Name | Source | Docker Image |
-| ----- | ----- | ----- |
+| Repo Name                | Source                              | Docker Image                               |
+| ------------------------ | ----------------------------------- | ------------------------------------------ |
 | Department Micro-service | https://github.com/zmad5306/gl-dept | https://hub.docker.com/r/zmad5306/gl-dept/ |
-| List Micro-service | https://github.com/zmad5306/gl-list | https://hub.docker.com/r/zmad5306/gl-list/ |
-| Item Micro-service | https://github.com/zmad5306/gl-item | https://hub.docker.com/r/zmad5306/gl-item/ |
-| API Gateway | https://github.com/zmad5306/gl-api | https://hub.docker.com/r/zmad5306/gl-api/ |
-| Web Application (UI) | https://github.com/zmad5306/gl-ui | https://hub.docker.com/r/zmad5306/gl-ui/ |
+| List Micro-service       | https://github.com/zmad5306/gl-list | https://hub.docker.com/r/zmad5306/gl-list/ |
+| Item Micro-service       | https://github.com/zmad5306/gl-item | https://hub.docker.com/r/zmad5306/gl-item/ |
+| API Gateway              | https://github.com/zmad5306/gl-api  | https://hub.docker.com/r/zmad5306/gl-api/  |
+| Web Application (UI)     | https://github.com/zmad5306/gl-ui   | https://hub.docker.com/r/zmad5306/gl-ui/   |
