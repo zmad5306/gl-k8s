@@ -54,9 +54,9 @@ The application then may be access be executing `http://grocery-list/` in the br
 
 ## Other Useful Commands
 
-### Ingress Status
+Ingress Status: `kubectl describe ingress --namespace default`
 
-`kubectl describe ingress --namespace default`
+Env Vars from Pod: `kubectl exec gl-api-deployment-66f9457944-2qmmm env`
 
 ### Mongodb Database Clean Up
 
