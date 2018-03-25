@@ -68,6 +68,7 @@ The application then may be access be executing `http://grocery-list/` in the br
 ## Source and Image Repositories
 
 | Repo Name | Source | Docker Image |
+| ----- | ----- | ----- |
 | Department Micro-service | https://github.com/zmad5306/gl-dept | https://hub.docker.com/r/zmad5306/gl-dept/ |
 | List Micro-service | https://github.com/zmad5306/gl-list | https://hub.docker.com/r/zmad5306/gl-list/ |
 | Item Micro-service | https://github.com/zmad5306/gl-item | https://hub.docker.com/r/zmad5306/gl-item/ |
