@@ -10,41 +10,43 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### Mongodb Database
 
-`kubectl apply -f gl-db/mongo-statefulset.yaml`
+`kubectl apply -f gl-db/statefulset.yml`
+
+`kubectl apply -f gl-db/service.yml`
 
 ### Department Micro-service
 
-`kubectl apply -f gl-dept/deployment.yaml`
+`kubectl apply -f gl-dept/deployment.yml`
 
-`kubectl apply -f gl-dept/service.yaml`
+`kubectl apply -f gl-dept/service.yml`
 
 ### List Micro-service
 
-`kubectl apply -f gl-list/deployment.yaml`
+`kubectl apply -f gl-list/deployment.yml`
 
-`kubectl apply -f gl-list/service.yaml`
+`kubectl apply -f gl-list/service.yml`
 
 ### Item Micro-service
 
-`kubectl apply -f gl-item/deployment.yaml`
+`kubectl apply -f gl-item/deployment.yml`
 
-`kubectl apply -f gl-item/service.yaml`
+`kubectl apply -f gl-item/service.yml`
 
 ### API Gateway
 
-`kubectl apply -f gl-api/deployment.yaml`
+`kubectl apply -f gl-api/deployment.yml`
 
-`kubectl apply -f gl-api/service.yaml`
+`kubectl apply -f gl-api/service.yml`
 
 ### Web Application (UI)
 
-`kubectl apply -f gl-ui/deployment.yaml`
+`kubectl apply -f gl-ui/deployment.yml`
 
-`kubectl apply -f gl-ui/service.yaml`
+`kubectl apply -f gl-ui/service.yml`
 
 ### Ingress
 
-`kubectl apply -f gl-ingress/ingress.yaml`
+`kubectl apply -f gl-ingress/ingress.yml`
 
 #### DNS
 
