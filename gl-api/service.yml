@@ -4,9 +4,10 @@ metadata:
   name: gl-api-service
   labels:
     app: gl-api
+  annotations:
+    ingress.kubernetes.io/affinity: 'cookie'
 spec:
   type: ClusterIP
-  sessionAffinity: ClientIP
   ports:
   - port: 8080
     protocol: TCP

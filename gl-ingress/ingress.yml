@@ -2,6 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: gl-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: cookie
 spec:
   backend:
     serviceName: gl-ui-service
