@@ -29,6 +29,11 @@ spec:
                 configMapKeyRef:
                   name: dept-config
                   key: mongouri
+          - name: default-dept-names
+            valueFrom:
+                configMapKeyRef:
+                  name: dept-config
+                  key: defaultdepts
         ports:
         - containerPort: 8080
         livenessProbe:
