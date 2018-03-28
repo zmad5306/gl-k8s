@@ -16,17 +16,23 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### Department Micro-service
 
+`kubectl apply -f gl-dept/configmap.yml`
+
 `kubectl apply -f gl-dept/deployment.yml`
 
 `kubectl apply -f gl-dept/service.yml`
 
 ### List Micro-service
 
+`kubectl apply -f gl-list/configmap.yml`
+
 `kubectl apply -f gl-list/deployment.yml`
 
 `kubectl apply -f gl-list/service.yml`
 
 ### Item Micro-service
+
+`kubectl apply -f gl-item/configmap.yml`
 
 `kubectl apply -f gl-item/deployment.yml`
 

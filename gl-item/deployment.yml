@@ -23,6 +23,12 @@ spec:
       - name: gl-item
         image: zmad5306/gl-item:latest
         imagePullPolicy: Always
+        env:
+          - name: mongo-db-uri
+            valueFrom:
+                configMapKeyRef:
+                  name: item-config
+                  key: mongouri
         ports:
         - containerPort: 8080
         livenessProbe:
