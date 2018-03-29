@@ -35,6 +35,8 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: mongo-persistent-storage
+      annotations:
+        volume.beta.kubernetes.io/storage-class: "fast"
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:

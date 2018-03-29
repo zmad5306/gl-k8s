@@ -10,6 +10,8 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### Mongodb Database
 
+`kubectl apply -f gl-db/storageclass.yml`
+
 `kubectl apply -f gl-db/statefulset.yml`
 
 `kubectl apply -f gl-db/service.yml`
