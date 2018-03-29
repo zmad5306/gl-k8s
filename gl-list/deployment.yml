@@ -49,3 +49,8 @@ spec:
           timeoutSeconds: 30
           successThreshold: 1
           failureThreshold: 5
+        resources:
+          requests:
+            memory: 128Mi
+          limits:
+            memory: 256Mi
