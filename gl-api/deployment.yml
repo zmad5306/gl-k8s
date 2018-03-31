@@ -23,6 +23,12 @@ spec:
       - name: gl-api
         image: zmad5306/gl-api:latest
         imagePullPolicy: Always
+        env:
+          - name: mongo-db-uri
+            valueFrom:
+                configMapKeyRef:
+                  name: api-config
+                  key: mongouri
         ports:
         - containerPort: 8080
         livenessProbe:

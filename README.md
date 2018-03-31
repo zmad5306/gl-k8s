@@ -42,6 +42,8 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### API Gateway
 
+`kubectl apply -f gl-api/configmap.yml`
+
 `kubectl apply -f gl-api/deployment.yml`
 
 `kubectl apply -f gl-api/service.yml`
