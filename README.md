@@ -8,6 +8,10 @@ Kubernetes manifests for grocery list application.
 
 https://kubernetes.io/docs/tasks/tools/install-minikube/
 
+### Configuration
+
+`kubectl apply -f gl-config/configmap.yml`
+
 ### Mongodb Database
 
 `kubectl apply -f gl-db/storageclass.yml`
@@ -18,15 +22,11 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### Department Micro-service
 
-`kubectl apply -f gl-dept/configmap.yml`
-
 `kubectl apply -f gl-dept/deployment.yml`
 
 `kubectl apply -f gl-dept/service.yml`
 
 ### List Micro-service
-
-`kubectl apply -f gl-list/configmap.yml`
 
 `kubectl apply -f gl-list/deployment.yml`
 
@@ -34,15 +34,11 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### Item Micro-service
 
-`kubectl apply -f gl-item/configmap.yml`
-
 `kubectl apply -f gl-item/deployment.yml`
 
 `kubectl apply -f gl-item/service.yml`
 
 ### API Gateway
-
-`kubectl apply -f gl-api/configmap.yml`
 
 `kubectl apply -f gl-api/deployment.yml`
 

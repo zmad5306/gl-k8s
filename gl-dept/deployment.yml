@@ -27,13 +27,13 @@ spec:
           - name: mongo-db-uri
             valueFrom:
                 configMapKeyRef:
-                  name: dept-config
-                  key: mongouri
+                  name: gl-config
+                  key: dept-mongouri
           - name: default-dept-names
             valueFrom:
                 configMapKeyRef:
-                  name: dept-config
-                  key: defaultdepts
+                  name: gl-config
+                  key: dept-defaultdepts
         ports:
         - containerPort: 8080
         livenessProbe:

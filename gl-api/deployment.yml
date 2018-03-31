@@ -27,8 +27,8 @@ spec:
           - name: mongo-db-uri
             valueFrom:
                 configMapKeyRef:
-                  name: api-config
-                  key: mongouri
+                  name: gl-config
+                  key: api-mongouri
         ports:
         - containerPort: 8080
         livenessProbe:
