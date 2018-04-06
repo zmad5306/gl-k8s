@@ -8,6 +8,14 @@ Kubernetes manifests for grocery list application.
 
 https://kubernetes.io/docs/tasks/tools/install-minikube/
 
+## Application Installation
+
+### All
+
+Issue from the root folder (do not cd into gl-k8s directory).
+
+`kubectl apply -f gl-k8s -R`
+
 ### Configuration
 
 `kubectl apply -f gl-config/configmap.yml`
@@ -19,6 +27,22 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 `kubectl apply -f gl-db/statefulset.yml`
 
 `kubectl apply -f gl-db/service.yml`
+
+#### Check Replicia Set Status
+
+Verify correct number of members:
+
+`kubectl exec mongo-0 -- bin/bash -c '/usr/bin/mongo --eval="printjson(rs.status())"'`
+
+`kubectl exec mongo-1 -- bin/bash -c '/usr/bin/mongo --eval="printjson(rs.status())"'`
+
+#### Setup Data
+
+Adds some test data to mongodb database for application testing.
+
+`kubectl cp gl-db/setup-data.js mongo-0:/usr/local/setup-data.js -c mongo`
+
+`kubectl exec mongo-0 -- bin/bash -c '/usr/bin/mongo /usr/local/setup-data.js'`
 
 ### Department Micro-service
 
@@ -73,6 +97,26 @@ Env Vars from Pod: `kubectl exec gl-api-deployment-66f9457944-2qmmm env`
 `kubectl delete svc mongo`
 
 `kubectl delete pvc -l role=mongo`
+
+### Initilize Replicia Set
+
+**No longer required, adding rolebinding fixed this issue. Leaving this for documentation purposes.**
+
+``` /bin/bash
+kubectl exec -ti mongo-0 mongo
+
+rs.initiate(
+   {
+      "_id": "rs0",
+      "version": 1,
+      "members": [
+         { "_id": 0, "host" : "mongo-0.mongo:27017" },
+         { "_id": 1, "host" : "mongo-1.mongo:27017" },
+         { "_id": 2, "host" : "mongo-2.mongo:27017" }
+      ]
+   }
+)
+```
 
 ## Source and Image Repositories
 
