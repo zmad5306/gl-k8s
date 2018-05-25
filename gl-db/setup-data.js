@@ -43,4 +43,5 @@ deptDb.department.find({}).forEach((dept) => {
                 name: `${dept.name} ${item}`
             });
         });
-    });
+    })
+});
